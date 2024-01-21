@@ -17,3 +17,28 @@
 /* Colores */
 
 /* ******************************** */
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  background-color: #1d2026;
+}
+
+#container{
+  background-color: red;
+  max-width: 1000px;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
