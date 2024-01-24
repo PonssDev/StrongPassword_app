@@ -34,102 +34,110 @@ body {
 }
 
 #container {
-  background-color: red;
+  /* background-color: red; */
   width: 100%;
 }
 
-header{
-  background-color: #f2f2f2;
+header {
+  background-color: #1d2026;
   display: flex;
   align-items: center;
   padding: 20px;
   gap: 20px;
-  border-bottom: 1px solid #8f8f8f;
 }
 
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-nav .left__nav, .right__nav{
+nav .left__nav,
+.right__nav {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-nav a{
+nav a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
-nav li{
+nav li {
   list-style: none;
 }
 
-.landing__page{
+.landing__page,
+.register__section {
   display: flex;
   justify-content: center;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
-.landing__interior{
+.landing__interior {
   max-width: 1000px;
   width: 1000px;
   display: flex;
   align-items: center;
   padding: 20px;
-  background-color: purple;
+  /* background-color: purple; */
 }
 
-.left__landing{
+.left__landing {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
 }
 
-.left__landing h3{
+.left__landing h3 {
   font-size: 40px;
+  color: white;
 }
 
-.left__landing p{
+.left__landing p {
   font-size: 15px;
+  color: white;
 }
 
-.left__landing a{
+.left__landing a {
   text-decoration: none;
   background-color: #3772ff;
   padding: 15px;
-  width: 45%;
+  width: 30%;
   border-radius: 10px;
+  text-align: center;
 }
 
-.vector{
-  width: 70%;
+.vector {
+  width: 50%;
 }
 
-.create__password{
-  background-color: pink;
+.create__password {
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
   width: 100%;
+  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.create__interior{
-  background-color: blue;
+.create__interior {
+  /* background-color: blue; */
   max-width: 1000px;
   width: 1000px;
   display: flex;
   justify-content: center;
 }
 
-.sub__form{
-  background-color: green;
+.sub__form {
+  /* background-color: #1d2026; */
+  background-color: #1d2026;
   width: 600px;
   padding: 30px;
+  border-radius: 15px;
 }
 
 .strongpassword {
@@ -137,6 +145,7 @@ nav li{
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  color: white;
 }
 
 .form {
@@ -162,16 +171,17 @@ nav li{
 
 .wrapper__lenght .number__lenght {
   font-size: 40px;
+  color: white;
 }
 
-.wrapper__input #password{
+.wrapper__input #password {
   border-radius: 10px;
-  background-color: #292d3d;
+  background-color: rgb(142, 142, 142);
   border: none;
   text-align: center;
 }
 
-#copy{
+#copy {
   width: 50px;
   height: 50px;
   border-radius: 10px;
@@ -192,6 +202,10 @@ nav li{
   font-size: 25px;
 }
 
+.wrapper__option label {
+  color: white;
+}
+
 .wrapper__option .wrapper__checkbox {
   display: grid;
   place-items: center;
@@ -202,14 +216,17 @@ nav li{
   position: relative;
   width: 24px;
   height: 24px;
-  border-radius: 50%; /* Hacer el checkbox circular */
-  background: #1d2026; /* Cambiar por tu color secundario */
+  border-radius: 50%;
+  /* Hacer el checkbox circular */
+  background: #1d2026;
+  /* Cambiar por tu color secundario */
   transition: box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 .wrapper__option input:checked {
-  box-shadow: 0 0 0 2px #3772ff; /* Cambiar por tu color primario */
+  box-shadow: 0 0 0 2px #3772ff;
+  /* Cambiar por tu color primario */
 }
 
 .wrapper__option input::after {
@@ -218,7 +235,8 @@ nav li{
   width: 0px;
   height: 0px;
   border-radius: 50%;
-  background: #3772ff; /* Cambiar por tu color primario */
+  background: #3772ff;
+  /* Cambiar por tu color primario */
   opacity: 0;
   transition: opacity 0.3s ease, width 0.2s linear, height 0.2s linear;
   top: 50%;
@@ -239,9 +257,81 @@ nav li{
   color: #f2f2f2;
   border-radius: 8px;
   border: none;
-  margin-left: auto; /* Centra horizontalmente */
+  margin-left: auto;
+  /* Centra horizontalmente */
   margin-right: auto;
   letter-spacing: 4px;
-  font-size: 20px; /* Centra horizontalmente */
+  font-size: 20px;
+  /* Centra horizontalmente */
 }
 
+footer {
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+}
+
+/* Register */
+.register__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.wrapper__register {
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+#register {
+  width: 400px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+  
+}
+
+.registrate__tittle {
+  text-align: center;
+  font-size: 35px;
+  background: #3772FF;
+  background: linear-gradient(to right, #3772FF 16%, #CF1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+#register #nombre, #primerApellido, #segundoApellido, #email, #contrasenya {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-bottom: 1px solid gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+}
+
+#register input[type="submit"] {
+  background-color: #3772ff;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#register input[type="submit"]:hover {
+  background-color: #2a58c4;
+}
