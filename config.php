@@ -3,7 +3,7 @@
 $usuario = "edib";
 $contrasena = "edib";
 $host = "localhost";
-$baseDatos = "usuarios";
+$baseDatos = "strongpassword";
 
 // Nos conectamos a la base de datos
 $conexion = mysqli_connect($host, $usuario, $contrasena, $baseDatos);

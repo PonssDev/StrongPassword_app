@@ -20,15 +20,16 @@
         </header>
         <section class="login__section">
             <div class="wrapper__login">
-                <form action="" id="login">
+                <form action="login.php" id="login" method="post">
                     <h3 class="login__tittle">Iniciar sesión</h3>
-                    <input type="email" placeholder="Email" id="email">
-                    <input type="text" placeholder="Contraseña" id="contrasenya">
+                    <input type="email" placeholder="Email" name="email" id="email">
+                    <input type="password" placeholder="Contraseña" name="contrasenya" id="contrasenya">
                     <input type="submit" value="Login" id="login__button">
                 </form>
             </div>
         </section>
     </div>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
