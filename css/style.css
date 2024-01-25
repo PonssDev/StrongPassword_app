@@ -18,12 +18,35 @@
 
 /* ******************************** */
 
+/* ScrollBAR */
+/* Estilo para la barra lateral del scroll */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+}
+
+/* Estilo para el riel de la barra */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color del riel de la barra */
+}
+
+/* Estilo para el mango de la barra */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del mango de la barra */
+  border-radius: 5px; /* Borde redondeado del mango */
+}
+
+/* Cambio de color al pasar el ratón por encima del mango */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   line-height: 1;
   box-sizing: border-box;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   color: #f2f2f2;
 }
 
@@ -31,6 +54,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #1d2026;
+  height: 100vh;
 }
 
 #container {
@@ -283,6 +307,7 @@ footer p {
   
 }
 
+
 .wrapper__register {
   background: rgb(46, 51, 61);
   background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
@@ -335,3 +360,84 @@ footer p {
 #register input[type="submit"]:hover {
   background-color: #2a58c4;
 }
+
+/* Login */
+
+/* Login */
+.login__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper__login {
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+#login {
+  width: 400px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.login__tittle {
+  text-align: center;
+  font-size: 35px;
+  background: #3772FF;
+  background: linear-gradient(to right, #3772FF 16%, #CF1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#login #email, #contrasenya {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-bottom: 1px solid gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+}
+
+#login input[type="submit"] {
+  background-color: #3772ff;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#login input[type="submit"]:hover {
+  background-color: #2a58c4;
+}
+
+/* Dashboard */
+.dashboard{
+  background-color: red;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard__content{
+  background-color: blue;
+  width: 70%;
+  
+}
+
+
+
+
+
+
