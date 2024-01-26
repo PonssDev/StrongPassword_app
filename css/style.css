@@ -289,6 +289,76 @@ nav li {
   /* Centra horizontalmente */
 }
 
+/* Quienes somos */
+.quienes__somos {
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.quienes__interior {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.quienes__interior h2 {
+  font-size: 35px;
+  color: #3772FF;
+  margin-bottom: 20px;
+}
+
+.quienes__interior p {
+  font-size: 18px;
+  color: #f2f2f2;
+  line-height: 1.5;
+}
+
+/* Opiniones */
+
+.opiniones__gente {
+  background: rgb(46, 51, 61);
+  background: linear-gradient(45deg, rgba(46, 51, 61, 1) 18%, rgba(29, 32, 38, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.opiniones__interior {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.opiniones__interior h2 {
+  font-size: 35px;
+  color: #3772FF;
+  margin-bottom: 20px;
+}
+
+.opinion {
+  background-color: #1d2026;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.opinion p {
+  font-size: 18px;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+}
+
+.opinion span {
+  font-size: 16px;
+  color: #888;
+}
+
+
 footer {
   padding: 10px;
   text-align: center;
