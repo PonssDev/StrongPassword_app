@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       !numbersCheckbox.checked &&
       !symbolsCheckbox.checked
     ) {
-      alert("Please select at least one option");
+      alert("Por favor selecciona al menos una opción");
       return;
     }
 
