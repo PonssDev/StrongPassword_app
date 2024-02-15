@@ -48,6 +48,9 @@
       <div class="logo">
         <img src="img/desktop/Strong Password •••_white.webp" alt="" class="logo">
       </div>
+      <?php
+      session_start();
+      ?>
       <nav>
         <div class="left__nav">
           <li><a href="#">Por qué Strong Password?</a></li>
@@ -55,9 +58,20 @@
           <li><a href="#">Precios</a></li>
         </div>
         <div class="right__nav">
-          <li><a href="login.html">Iniciar sesión</a></li>
+          <?php
+          // Comprobar si el usuario ha iniciado sesión
+          if (isset($_SESSION["email"])) {
+            // Mostrar el nombre del usuario y un enlace de cerrar sesión
+            echo '<li><a href="dashboard.php">Bienvenido, ' . $_SESSION["email"] . '</a></li>
+              <li><a href="logout.php">Cerrar sesión</a></li>';
+          } else {
+            // Si no ha iniciado sesión, mostrar enlace de inicio de sesión
+            echo '<li><a href="login.html">Iniciar sesión</a></li>';
+          }
+          ?>
           <li><a href="#">Contacto</a></li>
         </div>
+
       </nav>
     </header>
     <section class="landing__page">
@@ -65,7 +79,13 @@
         <div class="left__landing">
           <h3>Siempre con protección</h3>
           <p>Prepárate para tener las contraseñas mas seguras y almacenarlas con la mayor seguridad posible.</p>
-          <a href="register.html" class="registrar">Regístrate</a>
+          <?php
+          if (isset($_SESSION["email"])) {
+            echo '<a href="register.html" class="registrar">Planes</a>';
+          } else {
+            echo '<a href="register.html" class="registrar">Regístrate</a>';
+          }
+          ?>
         </div>
         <img src="img/desktop/vector copntrasenya.webp" alt="" class="vector">
       </div>
@@ -167,7 +187,7 @@
       <p>Made with ❤️ by Alan</p>
     </footer>
   </div>
-<script src="js/generator.js"></script>
+  <script src="js/generator.js"></script>
 </body>
 
 </html>
