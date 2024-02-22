@@ -58,32 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Obtener todas las filas como un array asociativo
             $cuentas = $result->fetch_all(MYSQLI_ASSOC);
+            
         }
     } else {
         $error_message = "Error al almacenar la cuenta. Por favor, intenta de nuevo.";
         echo "Error al ejecutar la consulta de inserción: " . $stmt->error;
     }
 
-
     // Cerrar el statement
     $stmt->close();
 }
 
-// Obtener las cuentas del usuario desde la base de datos
-$idUsuario = isset($_SESSION["id"]) ? $_SESSION["id"] : null;
-$selectQuery = "SELECT nombre_usuario, contrasenya FROM savedpass WHERE id_usuario = ?";
-$stmt = $conn->prepare($selectQuery);
-$stmt->bind_param("i", $idUsuario);
-
-// Verificar si la ejecución de la consulta fue exitosa
-if ($stmt->execute()) {
-    $result = $stmt->get_result();
-
-    // Obtener todas las filas como un array asociativo
-    $cuentas = $result->fetch_all(MYSQLI_ASSOC);
-}
-
-$stmt->close();
 
 // Cerrar la conexión
 $conn->close();
