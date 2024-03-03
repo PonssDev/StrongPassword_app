@@ -1,13 +1,11 @@
 <?php
-// Verificar si el usuario ha iniciado sesión
 session_start();
-if (!isset($_SESSION["email"])) {
-    // Si no ha iniciado sesión, redirigir al formulario de inicio de sesión
+
+if (!isset($_SESSION["email"]) || !isset($_SESSION["id"])) {
     header("Location: login.html");
     exit();
 }
 
-// Conexión a la base de datos (reemplaza con tus propios datos)
 $servername = "localhost";
 $username = "edib";
 $password = "edib";
@@ -15,63 +13,43 @@ $dbname = "strongpassword";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Variables para mantener los datos del formulario
-$nombreUsuario = $contrasenya = "";
 $error_message = "";
 
-// Verificar si se ha enviado el formulario de almacenamiento
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreUsuario = $_POST["nombreUsuario"];
     $contrasenya = $_POST["contrasenya"];
+    $idUsuario = $_SESSION["id"];
 
-    // Obtener el ID del usuario actual
-    $idUsuario = isset($_SESSION["id"]) ? $_SESSION["id"] : null;
-    $sql = "SELECT id FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_SESSION['email']);
-    $stmt->execute();
-    $stmt->bind_result($idUsuario);
-    $stmt->fetch();
-    $stmt->close();
-
-    // Insertar datos en la base de datos
     $insertQuery = "INSERT INTO savedpass (id_usuario, nombre_usuario, contrasenya) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($insertQuery);
     $stmt->bind_param("iss", $idUsuario, $nombreUsuario, $contrasenya);
 
     if ($stmt->execute()) {
-        // Almacenamiento exitoso, limpiar los campos
-        $nombreUsuario = $contrasenya = "";
-
-        // Recargar las cuentas después de la inserción
-        $selectQuery = "SELECT nombre_usuario, contrasenya FROM savedpass WHERE id_usuario = ?";
-        $stmt = $conn->prepare($selectQuery);
-        $stmt->bind_param("i", $idUsuario);
-
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
-
-            // Obtener todas las filas como un array asociativo
-            $cuentas = $result->fetch_all(MYSQLI_ASSOC);
-            
-        }
+        $stmt->close(); // Cerrar el statement
+        $conn->close(); // Cerrar la conexión
+        header("Location: dashboard.php");
+        exit();
     } else {
         $error_message = "Error al almacenar la cuenta. Por favor, intenta de nuevo.";
         echo "Error al ejecutar la consulta de inserción: " . $stmt->error;
     }
-
-    // Cerrar el statement
-    $stmt->close();
 }
 
+$selectQuery = "SELECT nombre_usuario, contrasenya FROM savedpass WHERE id_usuario = ?";
+$stmt = $conn->prepare($selectQuery);
+$stmt->bind_param("i", $_SESSION["id"]);
 
-// Cerrar la conexión
-$conn->close();
+if ($stmt->execute()) {
+    $result = $stmt->get_result();
+    $cuentas = $result->fetch_all(MYSQLI_ASSOC);
+}
+
+$stmt->close(); // Cerrar el statement
+$conn->close(); // Cerrar la conexión
 ?>
 
 <!DOCTYPE html>
@@ -139,6 +117,7 @@ $conn->close();
                         }
                         ?>
                     </tbody>
+                </table>
             </div>
         </section>
     </div>

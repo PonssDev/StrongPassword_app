@@ -31,6 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Inicio de sesión exitoso
         session_start();
+
+        // Obtener el ID del usuario y almacenarlo en la sesión
+        $row = $result->fetch_assoc();
+        $_SESSION["id"] = $row["id"];
+
         $_SESSION["email"] = $email;
         header("Location: dashboard.php"); // Redirigir a la página del panel de control
         exit();
@@ -44,3 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Cerrar la conexión
 $conn->close();
+?>
+
+<!-- Mostrar el mensaje de error si está presente -->
+<?php if (!empty($error_message)): ?>
+    <p class="error-message">
+        <?php echo $error_message; ?>
+    </p>
+<?php endif; ?>
