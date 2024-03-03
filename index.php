@@ -161,7 +161,6 @@
           tristique senectus et netus et malesuada fames ac turpis egestas.</p>
       </div>
     </section>
-    <!-- Añade esta sección en tu archivo HTML -->
     <section class="opiniones__gente">
       <div class="opiniones__interior">
         <h2>Opiniones de la gente</h2>

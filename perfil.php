@@ -33,7 +33,6 @@ if ($result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Puedes incluir enlaces a tus estilos adicionales aquí -->
     <style>
         /* Estilos generales */
         body {
@@ -104,10 +103,7 @@ if ($result->num_rows > 0) {
                 <h1>Bienvenido a tu perfil,
                     <?php echo $usuario['nombre']; ?>
                 </h1>
-
-                <!-- Mostrar más información del perfil según sea necesario -->
-
-                <a href="logout.php">Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+                <a href="logout.php">Cerrar sesión</a>
             </div>
         </section>
     </div>

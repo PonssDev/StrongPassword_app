@@ -1,11 +1,6 @@
 <?php
-// Conexión a la base de datos (reemplaza con tus propios datos)
-$servername = "localhost";
-$username = "edib";
-$password = "edib";
-$dbname = "strongpassword";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'config.php';
 
 // Verificar la conexión
 if ($conn->connect_error) {
@@ -51,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-<!-- Mostrar el mensaje de error si está presente -->
 <?php if (!empty($error_message)): ?>
     <p class="error-message">
         <?php echo $error_message; ?>

@@ -1,9 +1,9 @@
 <?php
 // Credenciales base de datos
-$usuario = "edib";
-$contrasena = "edib";
-$host = "localhost";
-$baseDatos = "strongpassword";
+$usuario = "ddb220748";
+$contrasena = "290801snoP";
+$host = "bbdd.alandelgadoedib.com";
+$baseDatos = "ddb220748";
 
 // Nos conectamos a la base de datos
 $conexion = mysqli_connect($host, $usuario, $contrasena, $baseDatos);

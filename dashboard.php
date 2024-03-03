@@ -6,12 +6,7 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["id"])) {
     exit();
 }
 
-$servername = "localhost";
-$username = "edib";
-$password = "edib";
-$dbname = "strongpassword";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'config.php';
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
