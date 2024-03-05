@@ -81,9 +81,9 @@
           <p>Prepárate para tener las contraseñas mas seguras y almacenarlas con la mayor seguridad posible.</p>
           <?php
           if (isset($_SESSION["email"])) {
-            echo '<a href="register.html" class="registrar">Planes</a>';
+            echo '<a href="register.php" class="registrar">Planes</a>';
           } else {
-            echo '<a href="register.html" class="registrar">Regístrate</a>';
+            echo '<a href="register.php" class="registrar">Regístrate</a>';
           }
           ?>
         </div>
@@ -109,7 +109,7 @@
                 </div>
               </div>
               <div class="wrapper__lenght">
-                <p id="number__lenght" class="number__lenght">0</p>
+                <p id="number__lenght" class="number__lenght">14</p>
                 <input type="range" id="range" class="range" min="8" max="28">
               </div>
               <div class="options">

@@ -3,8 +3,8 @@
 include 'config.php';
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 
 // Variables para mantener los datos del formulario
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Consultar la base de datos para verificar las credenciales
     $query = "SELECT * FROM usuarios WHERE email = ? AND contrasenya = ?";
-    $stmt = $conn->prepare($query);
+    $stmt = $conexion->prepare($query);
     $stmt->bind_param("ss", $email, $contrasenya);
     $stmt->execute();
     $result = $stmt->get_result();

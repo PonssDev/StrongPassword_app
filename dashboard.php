@@ -8,9 +8,6 @@ if (!isset($_SESSION["email"]) || !isset($_SESSION["id"])) {
 
 include 'config.php';
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 $error_message = "";
 
